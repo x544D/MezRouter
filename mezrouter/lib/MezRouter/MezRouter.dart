@@ -25,6 +25,8 @@ class MezRouter {
     bool preventDuplicates = true,
     Map<String, String>? parameters,
   }) {
+    // TODO : Make sure that _isBusy is false!
+    // if not we mark this current fcall as a delegate and await for it.
     _navigationStack.addIf(
       preventDuplicates && _navigationStack.last.route == page,
       MRoute(route: page, args: arguments, params: parameters),
